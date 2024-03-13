@@ -30,5 +30,6 @@ setuptools.setup(
     },
     install_requires=install_requires,
     scripts=[
+        'tree_partition/resources/scripts/tp_partition',
     ],
 )

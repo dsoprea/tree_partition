@@ -206,7 +206,6 @@ def partition_and_link(
             link_target = \
                 os.path.join(
                     source_root_path,
-                    partition,
                     rel_filepath)
 
 

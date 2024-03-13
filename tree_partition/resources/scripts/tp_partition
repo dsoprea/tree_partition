@@ -66,13 +66,21 @@ def _main():
         "Target must be a directory."
 
 
+    includes = [
+        pattern.lower()
+        for pattern
+        in args.includes
+    ]
+
+
     def predicate(rel_filepath):
-        if not args.includes:
+        if not includes:
             return True
 
         filename = os.path.basename(rel_filepath)
+        filename = filename.lower()
 
-        for pattern in args.includes:
+        for pattern in includes:
 
             if fnmatch.fnmatch(filename, pattern) is True:
                 return True
